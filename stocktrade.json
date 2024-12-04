@@ -1,0 +1,588 @@
+{
+  "events": [
+    {
+      "eventId": "1",
+      "eventTime": "2024-12-04T09:06:22.879946695Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_STARTED",
+      "version": "1265",
+      "taskId": "215639549",
+      "workflowExecutionStartedEventAttributes": {
+        "workflowType": {
+          "name": "StockTrade"
+        },
+        "taskQueue": {
+          "name": "stock-trading",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "workflowExecutionTimeout": "0s",
+        "workflowRunTimeout": "0s",
+        "workflowTaskTimeout": "10s",
+        "originalExecutionRunId": "dd726295-1a61-4060-b503-6cdc89a354e2",
+        "identity": "3185@Brendans-MacBook-Pro.local@",
+        "firstExecutionRunId": "dd726295-1a61-4060-b503-6cdc89a354e2",
+        "attempt": 1,
+        "firstWorkflowTaskBackoff": "0s",
+        "header": {},
+        "workflowId": "37ef1fee-d934-470d-af7e-f57f0f1c360c"
+      }
+    },
+    {
+      "eventId": "2",
+      "eventTime": "2024-12-04T09:06:22.880051877Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639550",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "stock-trading",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "3",
+      "eventTime": "2024-12-04T09:06:22.892192438Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "version": "1265",
+      "taskId": "215639555",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "2",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "requestId": "3f3026b4-f4bf-4133-b973-9998a951a661",
+        "historySizeBytes": "287",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        }
+      }
+    },
+    {
+      "eventId": "4",
+      "eventTime": "2024-12-04T09:06:23.127809298Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "version": "1265",
+      "taskId": "215639560",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "2",
+        "startedEventId": "3",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        },
+        "sdkMetadata": {
+          "langUsedFlags": [
+            3
+          ],
+          "sdkName": "temporal-go",
+          "sdkVersion": "1.30.1"
+        },
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "5",
+      "eventTime": "2024-12-04T09:06:23.127852169Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639561",
+      "activityTaskScheduledEventAttributes": {
+        "activityId": "5",
+        "activityType": {
+          "name": "CheckStockPrice"
+        },
+        "taskQueue": {
+          "name": "stock-trading",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "header": {},
+        "scheduleToCloseTimeout": "0s",
+        "scheduleToStartTimeout": "0s",
+        "startToCloseTimeout": "2s",
+        "heartbeatTimeout": "0s",
+        "workflowTaskCompletedEventId": "4",
+        "retryPolicy": {
+          "initialInterval": "1s",
+          "backoffCoefficient": 2,
+          "maximumInterval": "100s"
+        },
+        "useWorkflowBuildId": true
+      }
+    },
+    {
+      "eventId": "6",
+      "eventTime": "2024-12-04T09:06:23.127874198Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_STARTED",
+      "version": "1265",
+      "taskId": "215639565",
+      "activityTaskStartedEventAttributes": {
+        "scheduledEventId": "5",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "requestId": "caa01afd-f5dc-4a6e-a0d0-974ab58933d6",
+        "attempt": 1,
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        }
+      }
+    },
+    {
+      "eventId": "7",
+      "eventTime": "2024-12-04T09:06:23.359272812Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_COMPLETED",
+      "version": "1265",
+      "taskId": "215639566",
+      "activityTaskCompletedEventAttributes": {
+        "result": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "NjI="
+            }
+          ]
+        },
+        "scheduledEventId": "5",
+        "startedEventId": "6",
+        "identity": "2298@Brendans-MacBook-Pro.local@"
+      }
+    },
+    {
+      "eventId": "8",
+      "eventTime": "2024-12-04T09:06:23.359283762Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639567",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "Brendans-MacBook-Pro.local:c3050d9c-0579-4a72-b63f-93874cdaf1a4",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "stock-trading"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "9",
+      "eventTime": "2024-12-04T09:06:23.394393428Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "version": "1265",
+      "taskId": "215639571",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "8",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "requestId": "bf7b49ce-428a-4188-826b-820e75b05b65",
+        "historySizeBytes": "1032",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        }
+      }
+    },
+    {
+      "eventId": "10",
+      "eventTime": "2024-12-04T09:06:23.632722153Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "version": "1265",
+      "taskId": "215639576",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "8",
+        "startedEventId": "9",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "11",
+      "eventTime": "2024-12-04T09:06:23.632787725Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639577",
+      "activityTaskScheduledEventAttributes": {
+        "activityId": "11",
+        "activityType": {
+          "name": "SendNotification"
+        },
+        "taskQueue": {
+          "name": "stock-trading",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "header": {},
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "Imh1bWFuQXBwcm92YWwi"
+            },
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "IlRyYWRlIDM3ZWYxZmVlLWQ5MzQtNDcwZC1hZjdlLWY1N2YwZjFjMzYwYyByZXF1aXJlcyBhcHByb3ZhbCI="
+            }
+          ]
+        },
+        "scheduleToCloseTimeout": "0s",
+        "scheduleToStartTimeout": "0s",
+        "startToCloseTimeout": "2s",
+        "heartbeatTimeout": "0s",
+        "workflowTaskCompletedEventId": "10",
+        "retryPolicy": {
+          "initialInterval": "1s",
+          "backoffCoefficient": 2,
+          "maximumInterval": "100s"
+        },
+        "useWorkflowBuildId": true
+      }
+    },
+    {
+      "eventId": "12",
+      "eventTime": "2024-12-04T09:06:23.632811965Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_STARTED",
+      "version": "1265",
+      "taskId": "215639580",
+      "activityTaskStartedEventAttributes": {
+        "scheduledEventId": "11",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "requestId": "9df1cec5-856c-4eb0-9371-2eea076b75d4",
+        "attempt": 1,
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        }
+      }
+    },
+    {
+      "eventId": "13",
+      "eventTime": "2024-12-04T09:06:23.864253838Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_COMPLETED",
+      "version": "1265",
+      "taskId": "215639581",
+      "activityTaskCompletedEventAttributes": {
+        "scheduledEventId": "11",
+        "startedEventId": "12",
+        "identity": "2298@Brendans-MacBook-Pro.local@"
+      }
+    },
+    {
+      "eventId": "14",
+      "eventTime": "2024-12-04T09:06:23.864258848Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639582",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "Brendans-MacBook-Pro.local:c3050d9c-0579-4a72-b63f-93874cdaf1a4",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "stock-trading"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "15",
+      "eventTime": "2024-12-04T09:06:23.872398528Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "version": "1265",
+      "taskId": "215639586",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "14",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "requestId": "c6364c71-5747-4823-a099-93cbbd119c42",
+        "historySizeBytes": "1863",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        }
+      }
+    },
+    {
+      "eventId": "16",
+      "eventTime": "2024-12-04T09:06:24.110663442Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "version": "1265",
+      "taskId": "215639590",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "14",
+        "startedEventId": "15",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "17",
+      "eventTime": "2024-12-04T09:06:35.781363432Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_SIGNALED",
+      "version": "1265",
+      "taskId": "215639592",
+      "workflowExecutionSignaledEventAttributes": {
+        "signalName": "approve",
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "dHJ1ZQ=="
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eventId": "18",
+      "eventTime": "2024-12-04T09:06:35.781365552Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639593",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "Brendans-MacBook-Pro.local:c3050d9c-0579-4a72-b63f-93874cdaf1a4",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "stock-trading"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "19",
+      "eventTime": "2024-12-04T09:06:35.791250516Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "version": "1265",
+      "taskId": "215639597",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "18",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "requestId": "abf361bf-f887-4184-93f4-5869e2021b47",
+        "historySizeBytes": "2308",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        }
+      }
+    },
+    {
+      "eventId": "20",
+      "eventTime": "2024-12-04T09:06:36.030757166Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "version": "1265",
+      "taskId": "215639602",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "18",
+        "startedEventId": "19",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "21",
+      "eventTime": "2024-12-04T09:06:36.030812127Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639603",
+      "activityTaskScheduledEventAttributes": {
+        "activityId": "21",
+        "activityType": {
+          "name": "PerformTrade"
+        },
+        "taskQueue": {
+          "name": "stock-trading",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "header": {},
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "NjI="
+            },
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "ImJ1eSI="
+            }
+          ]
+        },
+        "scheduleToCloseTimeout": "0s",
+        "scheduleToStartTimeout": "0s",
+        "startToCloseTimeout": "2s",
+        "heartbeatTimeout": "0s",
+        "workflowTaskCompletedEventId": "20",
+        "retryPolicy": {
+          "initialInterval": "1s",
+          "backoffCoefficient": 2,
+          "maximumInterval": "100s"
+        },
+        "useWorkflowBuildId": true
+      }
+    },
+    {
+      "eventId": "22",
+      "eventTime": "2024-12-04T09:06:36.030854308Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_STARTED",
+      "version": "1265",
+      "taskId": "215639606",
+      "activityTaskStartedEventAttributes": {
+        "scheduledEventId": "21",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "requestId": "13a1b982-f99a-4708-a637-b7757762913a",
+        "attempt": 1,
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        }
+      }
+    },
+    {
+      "eventId": "23",
+      "eventTime": "2024-12-04T09:06:36.267438788Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_COMPLETED",
+      "version": "1265",
+      "taskId": "215639607",
+      "activityTaskCompletedEventAttributes": {
+        "result": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJBcHByb3ZlZCI6ZmFsc2UsIklkIjoiYWJjZDEyMzQiLCJQcmljZSI6NjIsIlR5cGUiOiJidXkiLCJRdWFudGl0eSI6NiwiVGltZXN0YW1wIjoiMjAyNC0xMi0wNFQyMDowNjozNi4wODA2MzUrMTE6MDAifQ=="
+            }
+          ]
+        },
+        "scheduledEventId": "21",
+        "startedEventId": "22",
+        "identity": "2298@Brendans-MacBook-Pro.local@"
+      }
+    },
+    {
+      "eventId": "24",
+      "eventTime": "2024-12-04T09:06:36.267443598Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639608",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "Brendans-MacBook-Pro.local:c3050d9c-0579-4a72-b63f-93874cdaf1a4",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "stock-trading"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "25",
+      "eventTime": "2024-12-04T09:06:36.275548885Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "version": "1265",
+      "taskId": "215639612",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "24",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "requestId": "9fa08200-0044-46b0-97e3-ee2eb463e8d0",
+        "historySizeBytes": "3211",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        }
+      }
+    },
+    {
+      "eventId": "26",
+      "eventTime": "2024-12-04T09:06:36.515535376Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "version": "1265",
+      "taskId": "215639616",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "24",
+        "startedEventId": "25",
+        "identity": "2298@Brendans-MacBook-Pro.local@",
+        "workerVersion": {
+          "buildId": "2935c7426173e0a5cf1222b73e852eb6"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "27",
+      "eventTime": "2024-12-04T09:06:36.515610347Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_SCHEDULED",
+      "version": "1265",
+      "taskId": "215639617",
+      "activityTaskScheduledEventAttributes": {
+        "activityId": "27",
+        "activityType": {
+          "name": "SendNotification"
+        },
+        "taskQueue": {
+          "name": "stock-trading",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "header": {},
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "InJlcG9ydCI="
+            },
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "IlRyYWRlIDM3ZWYxZmVlLWQ5MzQtNDcwZC1hZjdlLWY1N2YwZjFjMzYwYzoge3RydWUgYWJjZDEyMzQgNjIgYnV5IDYgMjAyNC0xMi0wNCAyMDowNjozNi4wODA2MzUgKzExMDAgQUVEVH0i"
+            }
+          ]
+        },
+        "scheduleToCloseTimeout": "0s",
+        "scheduleToStartTimeout": "0s",
+        "startToCloseTimeout": "2s",
+        "heartbeatTimeout": "0s",
+        "workflowTaskCompletedEventId": "26",
+        "retryPolicy": {
+          "initialInterval": "1s",
+          "backoffCoefficient": 2,
+          "maximumInterval": "100s"
+        },
+        "useWorkflowBuildId": true
+      }
+    },
+    {
+      "eventId": "28",
+      "eventTime": "2024-12-04T09:06:36.515668758Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_COMPLETED",
+      "version": "1265",
+      "taskId": "215639618",
+      "workflowExecutionCompletedEventAttributes": {
+        "result": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJBcHByb3ZlZCI6dHJ1ZSwiSWQiOiJhYmNkMTIzNCIsIlByaWNlIjo2MiwiVHlwZSI6ImJ1eSIsIlF1YW50aXR5Ijo2LCJUaW1lc3RhbXAiOiIyMDI0LTEyLTA0VDIwOjA2OjM2LjA4MDYzNSsxMTowMCJ9"
+            }
+          ]
+        },
+        "workflowTaskCompletedEventId": "26"
+      }
+    }
+  ]
+}
