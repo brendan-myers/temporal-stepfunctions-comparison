@@ -80,7 +80,7 @@ func StockTrade(ctx workflow.Context) (TransactionResult, error) {
 	//	Report result
 	//
 	msg = fmt.Sprintf("Trade %s: %v", workflow.GetInfo(ctx).WorkflowExecution.ID, transactionResult)
-	workflow.ExecuteActivity(ctx, SendNotification, "report", msg)
+	workflow.ExecuteActivity(ctx, SendNotification, "report", msg).Get(ctx, nil)
 
 	return transactionResult, nil
 }
